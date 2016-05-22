@@ -6,11 +6,11 @@ Calculators:
   <input type='submit' value='Calculate Wholesale'/>
 </form>
 <br>
-<% unless ($wp_result == 0 || $wp_result == nil) %> Wholesale price = <%= $wp_result %> <% end %>
+<% unless (@wp_result == 0 || @wp_result == nil) %> Wholesale price = <%= @wp_result %> <% end %>
 <br><br>
 <form action='/calculator' method='post'>
   <input type='text' name='wholesale_price' placeholder='Wholesale price'>
   <input type='submit' value='Calculate RRP'/>
 </form>
 <br>
-<% unless ($rrp_result == 0 || $rrp_result == nil)  %> Retail price = <%= $rrp_result %> <% end %>
+<% unless (@rrp_result == 0 || @rrp_result == nil)  %> Retail price = <%= @rrp_result %> <% end %>
