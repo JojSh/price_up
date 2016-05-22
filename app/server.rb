@@ -3,7 +3,7 @@ class PriceUpApp < Sinatra::Base
   enable :sessions
 
   get '/' do
-    "Hello"
+    redirect '/calculator'
   end
 
   get '/calculator' do
