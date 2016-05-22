@@ -1,4 +1,4 @@
-class PriceUpApp
+class PriceUp
 
   def wholesale(cost, minutes)
     ((cost + (minutes * 0.34)) * 2)

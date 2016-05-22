@@ -1,6 +1,6 @@
-require 'price_up'
+# require 'price_up'
 
-describe PriceUpApp do
+describe PriceUp do
 
   it 'receives costs and production time and returns wholesale price' do
     expect(subject.wholesale(2, 1)).to eq(4.68)
