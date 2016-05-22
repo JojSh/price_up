@@ -9,7 +9,7 @@ Calculators:
 <% unless (@wp_result == 0 || @wp_result == nil) %> Wholesale price = <%= @wp_result %> <% end %>
 <br><br>
 <form action='/calculator' method='post'>
-  <input type='text' name='wholesale_price' placeholder='Wholesale price'>
+  <input type='text' name='wholesale_price' placeholder="<%= @wp_result ||= 'Wholesale price' %>" >
   <input type='submit' value='Calculate RRP'/>
 </form>
 <br>
