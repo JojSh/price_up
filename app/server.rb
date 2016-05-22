@@ -7,22 +7,17 @@ class PriceUpApp < Sinatra::Base
   end
 
   get '/calculator' do
-    # "Calculator goes here"
     erb :calculator
   end
 
   post '/calculator' do
     costs = params[:costs].to_i
     time  = params[:minutes].to_i
-    instance = PriceUp.new
-    $result = instance.wholesale(costs, time)
-    redirect '/calculate'
-  end
+    wholesale_price = params[:wholesale_price].to_f
 
-  get '/calculate' do
-    # "result = "
-    # $result
-    erb :calculate
+    $wp_result = PriceUp.new.wholesale(costs, time)
+    $rrp_result = PriceUp.new.retail(wholesale_price)
+    redirect '/calculator'
   end
 
 end
