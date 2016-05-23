@@ -17,8 +17,8 @@ class PriceUpApp < Sinatra::Base
     time  = params[:minutes].to_i
     wholesale_price = params[:wholesale_price].to_f
 
-    session[:wp_result] = '%.2f' % PriceUp.new.wholesale(costs, time)
-    session[:rrp_result] = '%.2f' % PriceUp.new.retail(wholesale_price)
+    session[:wp_result] = '%.2f' % Calculator.new.wholesale(costs, time)
+    session[:rrp_result] = '%.2f' % Calculator.new.retail(wholesale_price)
     redirect '/calculator'
   end
 

@@ -1,6 +1,8 @@
-# require 'price_up'
+describe Calculator do
 
-describe PriceUp do
+  it 'is initalized with default rates' do
+
+  end
 
   it 'receives costs and production time and returns wholesale price' do
     expect(subject.wholesale(2, 1)).to eq(4.68)

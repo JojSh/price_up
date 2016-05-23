@@ -1,5 +1,5 @@
 require 'sinatra'
 require 'sinatra/base'
 
-require_relative 'lib/price_up'
+require_relative 'lib/calculator'
 require_relative 'server'
