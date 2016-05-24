@@ -7,6 +7,9 @@ Calculators:
 </form>
 <br>
 <% unless (@wp_result == 0 || @wp_result == nil) %> Wholesale price = <%= @wp_result %> <% end %>
+<!-- Rate per minute set to = <%= @per_min_rate %>
+<br><br>
+Wholsale rate set to = <%= @wholesale_rate %> -->
 <br><br>
 <form action='/calculator' method='post'>
   <input type='text' name='wholesale_price' placeholder="<%= @wp_result ||= 'Wholesale price' %>" >
@@ -14,3 +17,4 @@ Calculators:
 </form>
 <br>
 <% unless (@rrp_result == 0 || @rrp_result == nil)  %> Retail price = <%= @rrp_result %> <% end %>
+<!-- Retail rate set to = <%= @rrp_rate %> -->
