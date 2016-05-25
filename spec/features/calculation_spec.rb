@@ -1,4 +1,4 @@
-feature "Wholesale price" do
+feature "Wholesale price feature" do
 
   scenario "calculated by entering costs and time" do
     visit '/calculator'
@@ -9,7 +9,7 @@ feature "Wholesale price" do
   end
 end
 
-feature "Retail price" do
+feature "Retail price feature" do
 
   scenario "calculated by entering wholesale price" do
     visit '/calculator'
@@ -17,5 +17,17 @@ feature "Retail price" do
     click_button("Calculate RRP")
     expect(page).to have_content("5")
   end
+end
 
+feature "Alter rates" do
+
+  scenario "by clicking button and entering new cost" do
+    visit '/calculator'
+    # check_box("Reset my rate per min")
+    fill_in :rate_per_min, with: 0.50
+    fill_in :costs, with: 2
+    fill_in :minutes, with: 1
+    click_button("Calculate Wholesale")
+    expect(page).to have_content("5.00")
+  end
 end
