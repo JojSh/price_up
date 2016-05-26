@@ -23,7 +23,6 @@ feature "Alter rates" do
 
   scenario "by clicking button and entering new cost" do
     visit '/calculator'
-    # check_box("Reset my rate per min")
     fill_in :rate_per_min, with: 0.50
     fill_in :costs, with: 2
     fill_in :minutes, with: 1

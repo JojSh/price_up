@@ -16,8 +16,8 @@ class Calculator
     wholesale_price * @rrp_rate
   end
 
-  # def set_rate_per_min(rate)
-  #   @per_min_rate = rate
-  # end
+  def set_rate_per_min(rate)
+    @per_min_rate = rate
+  end
 
 end

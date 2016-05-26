@@ -1,15 +1,23 @@
-Calculators:
+<font size='2'>
+<br><br>
+-------------------------------- Wholesale ------------------------------------
 <br><br>
 <form action='/calculator' method='post'>
-  <input type='text' name='costs' placeholder='Cost of materials'>
-  <input type='text' name='minutes' placeholder='time spent in minutes'>
+  <input type='number' name='costs' placeholder='Cost of materials'>
+  <input type='number' name='minutes' placeholder='time spent in minutes'>
+  £ <input id="rpm" type="number" placeholder="0.34" max="10.00" min="0.10" name="rate_per_min" step="0.01"  />
+    <label for="rpm">(rate per min)</label>
   <input type='submit' value='Calculate Wholesale'/>
 </form>
 <br>
-<% unless (@wp_result == 0 || @wp_result == nil) %> Wholesale price = <%= @wp_result %> <% end %>
-<!-- Rate per minute set to = <%= @per_min_rate %>
+
+
 <br><br>
-Wholsale rate set to = <%= @wholesale_rate %> -->
+<% unless (@wp_result == 0 || @wp_result == nil) %> Wholesale price = <%= @wp_result %> <% end %>
+
+<br><br>
+--------------------------------- Retail --------------------------------------
+
 <br><br>
 <form action='/calculator' method='post'>
   <input type='text' name='wholesale_price' placeholder="<%= @wp_result ||= 'Wholesale price' %>" >
@@ -17,9 +25,4 @@ Wholsale rate set to = <%= @wholesale_rate %> -->
 </form>
 <br>
 <% unless (@rrp_result == 0 || @rrp_result == nil)  %> Retail price = <%= @rrp_result %> <% end %>
-<!-- Retail rate set to = <%= @rrp_rate %> -->
-
-<br><br>
-
-<input id="rate_per_min" placeholder="0.34" max="10.00" min="0.10" name="product[price]" step="0.01" type="number" />
-<label for="rate_per_min">Rate per minute</label>
+<br><br></font>

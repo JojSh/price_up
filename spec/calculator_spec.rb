@@ -23,11 +23,11 @@ describe Calculator do
     end
   end
 
-  # describe 'set rate per min' do
-  #   it 'can be altered' do
-  #     calculator.set_rate_per_min(0.50)
-  #     expect(calculator.wholesale(2, 1)).to eq(5.00)
-  #   end
-  # end
+  describe 'set rate per min' do
+    it 'can be altered' do
+      calculator.set_rate_per_min(0.50)
+      expect(calculator.wholesale(2, 1)).to eq(5.00)
+    end
+  end
 
 end
