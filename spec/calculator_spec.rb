@@ -5,8 +5,8 @@ describe Calculator do
   describe 'initialize' do
     it 'is initalized with default rates' do
       expect(calculator.per_min_rate).to eq 0.34
-      expect(calculator.wholesale_rate).to eq 2
-      expect(calculator.rrp_rate).to eq 2.5
+      expect(calculator.wholesale_markup).to eq 2
+      expect(calculator.rrp_markup).to eq 2.5
     end
 
   end

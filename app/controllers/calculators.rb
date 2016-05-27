@@ -16,9 +16,8 @@ class PriceUpApp
   end
 
   post '/calculaterrp' do
-    calc = Calculator.new
     wholesale_price = params[:wholesale_price].to_f
-    session[:rrp_result] = '%.2f' % calc.retail(wholesale_price)
+    session[:rrp_result] = '%.2f' % Calculator.new.retail(wholesale_price)
     redirect '/calculator'
   end
 
