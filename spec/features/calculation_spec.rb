@@ -38,14 +38,18 @@ feature "Customize" do
 
   context "rate of wholesale markup" do
     scenario "by clicking button and adjusting multiplier" do
-      # fill_in :wholesale_markup, with
-
+      fill_in :wholesale_markup, with: 2.5
+      click_button("Calculate Wholesale")
+      expect(page).to have_content("6.25")
     end
   end
 
   context "rate of RRP markup" do
     scenario "by clicking button and adjusting multiplier" do
-
+      fill_in :rrp_markup, with: 3
+      fill_in :wholesale_price, with: 2
+      click_button("Calculate RRP")
+      expect(page).to have_content("6")
     end
   end
 
