@@ -2,7 +2,7 @@
 <br><br>
 -------------------------------- Wholesale ------------------------------------
 <br><br>
-<form action='/calculator' method='post'>
+<form action='/calculatewhp' method='post'>
   <input type='number' name='costs' placeholder='Cost of materials'>
   <input type='number' name='minutes' placeholder='time spent in minutes'>
   £ <input id="rpm" type="number" placeholder="0.34" max="10.00" min="0.10" name="rate_per_min" step="0.01"  />
@@ -19,7 +19,7 @@
 --------------------------------- Retail --------------------------------------
 
 <br><br>
-<form action='/calculator' method='post'>
+<form action='/calculaterrp' method='post'>
   <input type='text' name='wholesale_price' placeholder="<%= @wp_result ||= 'Wholesale price' %>" >
   <input type='submit' value='Calculate RRP'/>
 </form>
