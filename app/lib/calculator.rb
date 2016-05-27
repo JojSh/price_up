@@ -20,4 +20,12 @@ class Calculator
     @per_min_rate = rate
   end
 
+  def set_wholesale_markup(markup)
+    @wholesale_markup = markup
+  end
+
+  def set_rrp_markup(markup)
+    @rrp_markup = markup
+  end
+
 end
