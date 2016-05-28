@@ -18,6 +18,7 @@ class PriceUpApp
     calc.set_wholesale_markup(wholesale_markup.to_f)
 
     session[:wp_result] = '%.2f' % calc.wholesale(costs, time)
+    redirect '/calculator'
   end
 
   post '/calculaterrp' do
