@@ -5,8 +5,12 @@
 <form action='/calculatewhp' method='post'>
   <input type='number' name='costs' placeholder='Cost of materials'>
   <input type='number' name='minutes' placeholder='time spent in minutes'>
-  £ <input id="rpm" type="number" placeholder="0.34" max="10.00" min="0.10" name="rate_per_min" step="0.01"  />
+  £ <input id="rpm" type="number" placeholder="0.34" max="10.00" min="0.2" name="rate_per_min" step="0.01"  />
     <label for="rpm">(rate per min)</label>
+
+  £ <input id="wholesale_markup" type="number" placeholder="2.00" max="10" min="0.5" name="wholesale_markup" step="0.1"  />
+    <label for="wholesale_markup">(wholesale markup)</label>
+
   <input type='submit' value='Calculate Wholesale'/>
 </form>
 <br>

@@ -21,14 +21,14 @@ end
 
 feature "Customize" do
 
-  context "rate per minute" do
+  before do
+    visit '/calculator'
+    fill_in :rate_per_min, with: 0.50
+    fill_in :costs, with: 2
+    fill_in :minutes, with: 1
+  end
 
-    before do
-      visit '/calculator'
-      fill_in :rate_per_min, with: 0.50
-      fill_in :costs, with: 2
-      fill_in :minutes, with: 1
-    end
+  context "rate per minute" do
 
     scenario "by clicking button and entering new cost" do
       click_button("Calculate Wholesale")
@@ -36,13 +36,13 @@ feature "Customize" do
     end
   end
 
-  # context "rate of wholesale markup" do
-  #   scenario "by clicking button and adjusting multiplier" do
-  #     fill_in :wholesale_markup, with: 2.5
-  #     click_button("Calculate Wholesale")
-  #     expect(page).to have_content("6.25")
-  #   end
-  # end
+  context "rate of wholesale markup" do
+    scenario "by clicking button and adjusting multiplier" do
+      fill_in :wholesale_markup, with: 2.5
+      click_button("Calculate Wholesale")
+      expect(page).to have_content("6.25")
+    end
+  end
 
   # context "rate of RRP markup" do
   #   scenario "by clicking button and adjusting multiplier" do

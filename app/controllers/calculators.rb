@@ -10,8 +10,14 @@ class PriceUpApp
     calc = Calculator.new
     costs = params[:costs].to_i
     time  = params[:minutes].to_i
+
     params[:rate_per_min] == "" ? rate_per_min = 0.34 : rate_per_min = params[:rate_per_min]
     calc.set_rate_per_min(rate_per_min.to_f)
+
+    params[:wholesale_markup] == "" ? wholesale_markup = 2.00 : wholesale_markup = params[:wholesale_markup]
+    calc.set_wholesale_markup(wholesale_markup.to_f)
+
+
     session[:wp_result] = '%.2f' % calc.wholesale(costs, time)
   end
 
