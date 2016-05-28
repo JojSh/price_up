@@ -17,13 +17,17 @@ class PriceUpApp
     params[:wholesale_markup] == "" ? wholesale_markup = 2.00 : wholesale_markup = params[:wholesale_markup]
     calc.set_wholesale_markup(wholesale_markup.to_f)
 
-
     session[:wp_result] = '%.2f' % calc.wholesale(costs, time)
   end
 
   post '/calculaterrp' do
+    calc = Calculator.new
     wholesale_price = params[:wholesale_price].to_f
-    session[:rrp_result] = '%.2f' % Calculator.new.retail(wholesale_price)
+
+    params[:rrp_markup] == "" ? rrp_markup = 2.5 : rrp_markup = params[:rrp_markup]
+    calc.set_rrp_markup(rrp_markup.to_f)
+
+    session[:rrp_result] = '%.2f' % calc.retail(wholesale_price)
     redirect '/calculator'
   end
 

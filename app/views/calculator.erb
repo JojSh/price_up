@@ -25,6 +25,8 @@
 <br><br>
 <form action='/calculaterrp' method='post'>
   <input type='text' name='wholesale_price' placeholder="<%= @wp_result ||= 'Wholesale price' %>" >
+  £ <input id="rrp_markup" type="number" placeholder="2.50" max="10" min="0.5" name="rrp_markup" step="0.1"  />
+    <label for="rrp_markup">(Retail price markup)</label>
   <input type='submit' value='Calculate RRP'/>
 </form>
 <br>

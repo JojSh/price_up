@@ -44,13 +44,13 @@ feature "Customize" do
     end
   end
 
-  # context "rate of RRP markup" do
-  #   scenario "by clicking button and adjusting multiplier" do
-  #     fill_in :rrp_markup, with: 3
-  #     fill_in :wholesale_price, with: 2
-  #     click_button("Calculate RRP")
-  #     expect(page).to have_content("6")
-  #   end
-  # end
+  context "rate of RRP markup" do
+    scenario "by clicking button and adjusting multiplier" do
+      fill_in :rrp_markup, with: 3
+      fill_in :wholesale_price, with: 2
+      click_button("Calculate RRP")
+      expect(page).to have_content("6.00")
+    end
+  end
 
 end
