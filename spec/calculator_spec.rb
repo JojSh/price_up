@@ -2,15 +2,6 @@ describe Calculator do
 
   subject(:calculator) { described_class.new}
 
-  describe 'initialize' do
-    it 'is initalized with default rates' do
-      expect(calculator.per_min_rate).to eq 0.34
-      expect(calculator.wholesale_markup).to eq 2
-      expect(calculator.rrp_markup).to eq 2.5
-    end
-
-  end
-
   describe 'wholesale' do
     it 'receives costs and production time and returns wholesale price' do
       expect(calculator.wholesale(2, 1)).to eq(4.68)

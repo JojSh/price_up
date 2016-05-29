@@ -19,7 +19,7 @@ feature "Retail price feature" do
   end
 end
 
-feature "Customize" do
+feature "Customizing" do
 
   before do
     visit '/calculator'
